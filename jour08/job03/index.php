@@ -3,14 +3,15 @@
 session_start();
 
 
-if (!isset($_SESSION["nbvisites"])) {
-    $_SESSION["prenom"] = "";
-} else {
-    $_SESSION["prenom"]++;
+if (!isset($_SESSION["liste"])) {
+    $_SESSION["liste"] = [];
+    if ($_POST["prenom"]) != "" {
+        $_POST["prenom"] = $_POST["prenom"] + $_SESSION["liste"];
+    }
 }
 
 if (isset($_POST["reset"])) {
-    $_SESSION["prenom"] = "";
+
 }
 
 ?>

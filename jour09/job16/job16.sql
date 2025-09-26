@@ -1,0 +1,1 @@
+SELECT salles.nom, salles.capacite, etage.nom FROM salles JOIN etage WHERE capacite = MAX(capacite);
