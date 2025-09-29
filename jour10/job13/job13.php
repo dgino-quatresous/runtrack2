@@ -12,7 +12,10 @@ try {
     $pdo = new PDO("mysql:host=localhost;dbname=jour09", "root", "");
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $sql = "SELECT salles.nom AS salles, etage.nom AS etage FROM salles JOIN etage";
+    $sql = "SELECT salles.nom AS salles, etage.nom AS etage
+    FROM salles
+    JOIN etage
+    ON salles.id_etages = etage.id;";
     $stmt = $pdo->query($sql);
 
     echo "<table border='1'>";
